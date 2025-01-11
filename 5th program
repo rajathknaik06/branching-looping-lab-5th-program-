@@ -1,0 +1,60 @@
+"""Mandy, the HR manager, has implemented a new system to automate the calculation of employee bonuses and taxes based on tenure. Employees with more than 5 years of service receive a bonus, which is a percentage of their annual salary. He also calculates the tax on the total income, which includes the salary and bonus, and finally, he computes the net salary after tax.
+
+
+
+Formula:
+
+net bonus = (bonus percentage / 100) * Salary
+
+tax amount = (tax percentage / 100) * (salary + net bonus)
+
+net salary = salary + net bonus - tax amount
+
+Input format :
+The first line of input consists of a float S, representing the annual salary of the employee.
+
+The second line consists of an integer N, representing the number of years the employee has been with the company.
+
+The third line consists of a float B, representing the bonus percentage.
+
+The fourth line consists of a float T, representing the tax percentage.
+
+Output format :
+The first line of output displays "You have earned a bonus of X units." if eligible, otherwise "Sorry, you are not eligible for a bonus." where X is the bonus amount rounded to two decimal places.
+
+The second line displays "Tax Amount: Y units", where Y is the tax amount.
+
+The third line displays "Net Salary: Z units", where Z is the net salary after tax.
+
+"""
+
+
+
+# You are using Python
+salary = float(input())
+years_of_service = int(input())
+bonus_percentage = float(input())
+tax_percentage = float(input())
+
+net_bonus = 0
+if years_of_service > 5:
+    net_bonus = (bonus_percentage / 100) * salary
+    print("You have earned a bonus of", net_bonus, "units.")
+else:
+    print("Sorry , you are not eligible for a bonus.")
+    
+tax_amount = ( tax_percentage /100)*(salary + net_bonus)
+net_salary = salary + net_bonus - tax_amount
+
+print("Tax Amount:",tax_amount, "units")
+
+print("Net Salary:",net_salary, "units")
+
+
+
+"""
+bonus= (bonus percentagec/ 100) * salary
+tax amount = (taxpercentage / 100) * (salary + bonus)
+
+netsalary = salary + bonus - taxamount
+"""
